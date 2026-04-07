@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snazzy Paws Grooming | Booking</title>
+    <link rel="stylesheet" href="css/my-styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="header-division">
+    <h1>Snazzy Paws Grooming</h1>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a class="active" href="booking.html">Booking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Book a Grooming Appointment</h2>
+
+    <p id="booking-help" class="form-instructions">
+      Please complete the form below to schedule a grooming appointment with one of our stylists.  
+      Fields marked with an asterisk (*) are required.
+    </p>
+
+    <!--aria-describedby attribute will announce the form instruction text contained within
+    p id="booking-help"-->
+    <form aria-describedby="booking-help">
+      <label for="owner">Owner's Name *</label>
+      <input id="owner" name="owner" type="text" required>
+
+      <label for="email">Email Address *</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="dogname">Dog's Name *</label>
+      <input id="dogname" name="dogname" type="text" required>
+
+      <label for="breed">Breed</label>
+      <input id="breed" name="breed" type="text">
+
+      <label for="age">Age</label>
+      <input id="age" name="age" type="number" min="0">
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 Snazzy Paws Grooming</p>
+  <p>123 Dogbone Lane, Hamilton</p>
+  <p>Phone: 07 123 4567</p>
+  <p>Email: <a href="mailto:info@snazzypaws.co.nz">info@snazzypaws.co.nz</a></p>
+  <p>Open Monday to Friday: 9am to 5pm</p>
+</footer> 
+    
+</body>
+</html>
