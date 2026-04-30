@@ -1,0 +1,331 @@
+/* ============================
+   GLOBAL STYLES
+============================ */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #FAFAFA;
+  color: #222222;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*max-width set to 1200px is an established convention for responsive webpage design. 
+padding: 1rem; allows padding to scale proportional to the screen width.*/
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/*Class to style <iframe> content */
+.map-frame {
+  width: 100%;
+  max-width: 1200px; /*Limits width and content remains legible on very wide desktop screens */
+  height: 450px;
+  display: block; 
+  margin: 0 auto; /* Keeps iframe centered if max-width is reached */
+  border: 0;
+}
+
+/* ============================
+   HEADER + NAVIGATION
+============================ */
+
+/*The contrasting colors of the header style promote accessibility and address the needs of 
+color blind users. The header style is applied across all web pages*/
+header {
+  background-color: #005F73;
+  color: #FFFFFF;
+  padding: 1rem 0;
+}
+
+/*The .header-division class is a flexbox container that holds the <header> and <nav> elements
+flex and flex-wrap facilitates responsiveness and enables content to scape appropriately on
+mobile devices.*/
+.header-division {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Formats the unordered list to display each link horizontally in the navigation bar. The 
+unordered list is styled as a flexbox for responsiveness*/
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+/*Style for each hyperlink within the navigation bar*/
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+
+/*Pseudo classes a:hover and a:focus allow users to access the navigation bar through their 
+keyboard or mouse. The text of each navigation bar link will be underlined and change color*/
+nav a:hover,
+nav a:focus {
+  color: #94D2BD;
+  background-color: #FFFFFF26;
+  text-decoration: underline;
+}
+
+/*CSS selector applies the .active class to an <a> element within <nav> elements. This style
+highlights the current page on the navigation bar*/
+nav a.active {
+  color: #EE9B00;
+  background-color: #FFFFFF26;
+  text-decoration: underline;
+}
+
+/* ============================
+   FOOTER
+============================ */
+
+footer {
+  background-color: #94D2BD;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #222222;
+  font-weight: bold;
+}
+
+/* ============================
+   SERVICES TABLE ACCESSIBLE + RESPONSIVE
+============================ */
+
+/*services-table class defines the width, type of border and font-family for the table */
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Shared style rule applied to the structure of table header <th> and table data <td> cells */
+.services-table th,
+.services-table td {
+  padding: 8px;
+  border: 1px solid #CCCCCC;
+  text-align: left;
+}
+
+/* Alternate row colour for even rows within the table body. Contrasting rows 
+enhances visibility of text ands accessibility */
+.services-table tbody tr:nth-child(even) {
+  background-color: #E9F5F2;
+}
+
+/* Style rule applied to table header cells only */
+.services-table th {
+  background-color: #005F73;
+  color: #FFFFFF;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* MOBILE STACKED LAYOUT FOR SERVICES TABLE - RESPONSIVE DESIGN */
+/*The services table responsive design solution was adapted from code published on
+www.geeksforgeeks.org  A full citation to the specific webpage is included in my assignment 
+Reference List */
+
+/*On devices with a width of 600px or less the following styles will apply.*/
+@media screen and (max-width: 600px) {
+
+/* All content accessed through the .services-table class and held within the table elements 
+will be displayed as vertical block elements instead of a grid display */
+  .services-table,
+  .services-table thead,
+  .services-table tbody,
+  .services-table th,
+  .services-table td,
+  .services-table tr {
+    display: block;
+  }
+
+  /*The top: -9999px and left: -9999px coordinates hide the table header and associated table
+   row by moving it offscreen. Hiding the table header maintains the structure of the table for
+   assistive devices and ensures the content and layout remain legible when viewed on 
+   mobile devices*/
+  .services-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /*This class targets <tr> elements within the table body. Each horizontal table row and 
+  associated table data cell is realigned vertically. Each table row is formatted as a 
+  standalone card with a rounded border and 20px margin separating each card */
+  .services-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    padding: 0.5rem;
+    background-color: #FFFFFF;
+  }
+
+  /*This rule selects all <td> elements within the table body and applies formatting consistent
+  with a card layout. Borders are removed from each each <td> element. 'position: relative;
+  allows Service, Description and Price labels to be aligned relative to the contents of the
+  <td> elements */
+  .services-table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /*This CSS rule creates a pseudo element before each <td> element within the table body. The  
+  text (Service,Description,Price) within the 'data-label' HTML attribute is extracted into the 
+  pseudo element. The pseudo element is a label for the <td> content. The label is positioned 
+  according to 'left' and 'top' coordinates relative to the <td> element */
+  .services-table td:before {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    content: attr(data-label);
+    font-weight: bold;
+    color: #005F73;
+  }
+}
+
+/* ============================
+   GALLERY GRID
+============================ */
+
+/*This class uses available screen width to create a 4 column grid. The 1fr unit determines that
+each column width is a fraction of the available screen width. Each column has an equal width.
+Columns and rows are separated by a 20px gap */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/*This rule styles images within the .gallery class. Each image will occupy 100% of the grid 
+column and has a consistent fixed height of 250px for all images. The 'object-fit: cover;' 
+property crops images that don't fit within the width or height parameters and prevents image
+distortion */
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* ============================
+   FORMS
+============================ */
+
+/*This rule converts the form to a flex container. Form fields and labels are organised in a 
+verticle layout. The max-width property prevents the form becoming illegible on wider screens */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  max-width: 500px;
+}
+
+
+label {
+  font-weight: bold;
+}
+
+/*This class formats text instructing users on completing the online forms. The contrasting 
+background color, border and padding improve readability. Using rem as a unit of measurement 
+for padding and margins ensures these properties scale appropriately on different screen widths*/
+.form-instructions {
+  background: #E9F5F2;
+  padding: 1rem;
+  border-left: 4px solid #005F73;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+/*This rule provides consistent style conventions to input, textarea and button elements*/
+input, textarea, button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+}
+
+
+button {
+  background-color: #EE9B00;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #CA7F00;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+
+/* Media query will display header content as a verticle column when the website is viewed on
+a device with a screen width of 768px or less */
+@media (max-width: 768px) {
+  .header-division {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+/* Media query displays the horizontal navigation bar as a column on devices with a screen width 
+of 768px or less. The navigation links will be stacked as a verticle column */
+  nav ul {
+    flex-direction: column;
+  }
+
+/* When the screen width is 768px or less the .gallery class will reduce the 4 column image grid
+down to 2 columns. The available screen width is divided into an image grid with 2 equal 
+columns*/
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*The image gallery will display as 1 column when viewed on a device with a screen width of
+480px or less. The media query and .gallery class facilitate responsiveness for mobile or tablet
+devices */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*iframe height adjusts to 300px when displayed on screens with a width less than 600px */
+@media (max-width: 600px) {
+  .map-frame {
+    height: 300px;
+  }
+}
