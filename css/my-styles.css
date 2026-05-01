@@ -152,6 +152,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  /* New additions */
+  max-width: 500px;   /* Prevents the form from stretching too wide */
+  margin: 0 auto;     /* Centers the form on larger screens */
 }
 
 input,
@@ -159,6 +163,8 @@ textarea {
   padding: 0.5rem;
   border: 1px solid #999;
   border-radius: 4px;
+  width: 100%;        /* Keeps fields full-width *within* the new max-width */
+  box-sizing: border-box;
 }
 
 button {
@@ -169,12 +175,19 @@ button {
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+
+  /* Make the button a natural size */
+  width: auto;
+
+  /* Center the button under the form fields */
+  align-self: center;     
 }
 
 button:hover,
 button:focus {
   background-color: #0A9396;
 }
+
 
 /* ============================
    MAP FRAME
