@@ -2,67 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Meta tags required for Assignment 3 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a grooming appointment at Snazzy Paws Grooming.">
+
     <title>Snazzy Paws Grooming | Booking</title>
+
+    <!-- Bootstrap 4.6.1 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!-- Original stylesheet -->
     <link rel="stylesheet" href="css/my-styles.css">
 </head>
 
 <body>
 
+<!-- Header -->
 <header>
-  <div class="header-division">
-    <h1>Snazzy Paws Grooming</h1>
-    <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a class="active" href="booking.html">Booking</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+    <div class="container header-division">
+        <h1>Snazzy Paws Grooming</h1>
+
+        <nav aria-label="Main Navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a class="active" href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<main>
-  <section>
-    <h2>Book a Grooming Appointment</h2>
+<!-- Main Content -->
+<main class="container my-4">
+    <section>
+        <h2 class="mb-3">Book a Grooming Appointment</h2>
 
-    <p id="booking-help" class="form-instructions">
-      Please complete the form below to schedule a grooming appointment with one of our stylists.  
-      Fields marked with an asterisk (*) are required.
-    </p>
+        <p id="booking-help" class="form-instructions">
+            Please complete the form below to schedule a grooming appointment with one of our stylists.  
+            Fields marked with an asterisk (*) are required.
+        </p>
 
-    <!--aria-describedby attribute will announce the form instruction text contained within
-    p id="booking-help"-->
-    <form aria-describedby="booking-help">
-      <label for="owner">Owner's Name *</label>
-      <input id="owner" name="owner" type="text" required>
+        <!-- Accessible form -->
+        <form aria-describedby="booking-help">
+            <label for="owner">Owner's Name *</label>
+            <input id="owner" name="owner" type="text" required>
 
-      <label for="email">Email Address *</label>
-      <input id="email" name="email" type="email" required>
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" required>
 
-      <label for="dogname">Dog's Name *</label>
-      <input id="dogname" name="dogname" type="text" required>
+            <label for="dogname">Dog's Name *</label>
+            <input id="dogname" name="dogname" type="text" required>
 
-      <label for="breed">Breed</label>
-      <input id="breed" name="breed" type="text">
+            <label for="breed">Breed</label>
+            <input id="breed" name="breed" type="text">
 
-      <label for="age">Age</label>
-      <input id="age" name="age" type="number" min="0">
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" min="0">
 
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 </main>
 
+<!-- Footer -->
 <footer>
-  <p>&copy; 2024 Snazzy Paws Grooming</p>
-  <p>123 Dogbone Lane, Hamilton</p>
-  <p>Phone: 07 123 4567</p>
-  <p>Email: <a href="mailto:info@snazzypaws.co.nz">info@snazzypaws.co.nz</a></p>
-  <p>Open Monday to Friday: 9am to 5pm</p>
-</footer> 
-    
+    <p>&copy; 2024 Snazzy Paws Grooming</p>
+    <p>123 Dogbone Lane, Hamilton</p>
+    <p>Phone: 07 123 4567</p>
+    <p>Email: <a href="mailto:info@snazzypaws.co.nz">info@snazzypaws.co.nz</a></p>
+    <p>Open Monday to Friday: 9am to 5pm</p>
+</footer>
+
+<!-- Bootstrap 4.6.1 JS + jQuery & Popper -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
