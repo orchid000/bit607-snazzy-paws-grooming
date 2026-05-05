@@ -1,0 +1,4 @@
+AuthName "Secure directory"
+AuthUserFile "C:/Users/bkmar/OneDrive/Desktop/BIT607 Dev Projects/Assignment Three/protected/.htpasswd"
+AuthType Basic
+Require valid-user
