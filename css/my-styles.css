@@ -43,6 +43,8 @@ header {
   padding: 1rem 0;
 }
 
+/* !important is a CSS rule that forces this style to override
+   Bootstrap's default nav-link colours. It's not part of Bootstrap. */
 .navbar-nav .nav-link {
   color: #FFFFFF !important;
   font-weight: bold;
@@ -167,11 +169,15 @@ button:focus {
    ACCESSIBILITY
 ============================ */
 
+/* Styling for form instruction text (smaller and softer than normal body text) */
 .form-instructions {
   font-size: 0.95rem;
   color: #333;
 }
 
+/* .sr-only = "screen reader only". This class hides content visually but keeps it
+   available to screen readers for accessibility. It is a CSS accessibility helper,
+   not visible on the page. */
 .sr-only {
   position: absolute;
   left: -9999px;
